@@ -1,3 +1,4 @@
+import Modal from "./components/modals/Modal";
 import "./globals.css";
 
 export const metadata = {
@@ -12,7 +13,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="fr">
-      <body>{children}</body>
+      <body>
+        {/* <Modal isOpen title="Créer un nouvel évènement" actionLabel="Envoyer le formulaire" /> */}
+        {children}</body>
     </html>
   );
 }
