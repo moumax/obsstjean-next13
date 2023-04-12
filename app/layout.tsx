@@ -1,3 +1,4 @@
+import ClientOnly from "./components/ClientOnly";
 import RegisterModal from "./components/modals/RegisterModal";
 import "./globals.css";
 
@@ -14,8 +15,11 @@ export default function RootLayout({
   return (
     <html lang="fr">
       <body>
-        <RegisterModal />
-        {children}</body>
+        <ClientOnly>
+          <RegisterModal />
+        </ClientOnly>
+        <div className="pb-20 pt-28">{children}</div>
+      </body>
     </html>
   );
 }
