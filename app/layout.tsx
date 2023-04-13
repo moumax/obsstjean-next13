@@ -1,6 +1,7 @@
 import ClientOnly from "./components/ClientOnly";
 import RegisterModal from "./components/modals/RegisterModal";
 import "./globals.css";
+import ToasterProvider from "./providers/ToasterProvider";
 
 export const metadata = {
   title: "Observatoire astronomique de Saint Jean Le Blanc",
@@ -16,6 +17,7 @@ export default function RootLayout({
     <html lang="fr">
       <body>
         <ClientOnly>
+          <ToasterProvider />
           <RegisterModal />
         </ClientOnly>
         <div className="pb-20 pt-28">{children}</div>
