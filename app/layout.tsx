@@ -1,5 +1,7 @@
-import Modal from "./components/modals/Modal";
+import ClientOnly from "./components/ClientOnly";
+import RegisterModal from "./components/modals/RegisterModal";
 import "./globals.css";
+import ToasterProvider from "./providers/ToasterProvider";
 
 export const metadata = {
   title: "Observatoire astronomique de Saint Jean Le Blanc",
@@ -14,8 +16,12 @@ export default function RootLayout({
   return (
     <html lang="fr">
       <body>
-        {/* <Modal isOpen title="Créer un nouvel évènement" actionLabel="Envoyer le formulaire" /> */}
-        {children}</body>
+        <ClientOnly>
+          <ToasterProvider />
+          <RegisterModal />
+        </ClientOnly>
+        <div className="pb-20 pt-28">{children}</div>
+      </body>
     </html>
   );
 }
